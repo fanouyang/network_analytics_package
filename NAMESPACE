@@ -3,3 +3,5 @@
 export(network_measure)
 export(node_measure)
 export(sna_plot)
+
+importFrom("grDevices", "rgb")
