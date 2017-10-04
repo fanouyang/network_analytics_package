@@ -18,14 +18,14 @@ This is a simple package of three core functions of network analytics I used as 
 
 ## Overview of the data
 
-My dissertation focused on social learning analytics of a graduate-level 14-week semester-long online course. I only included four weeks' data in this package, i.e., week 02, week 08, week 13 and week 14. Each weekly data included two format: a network-format data (e.g., par_week02_network) and an adjacent-matrix data (e.g., par_week02_matrix). The network-format data includes attributes for the network, vertex and edge of the network. The adjacent-matrix data shows a square-format who-reply-to-whom matrix.
+My dissertation focused on social learning analytics of a graduate-level 14-week semester-long online course. I only included four weeks' data in this package, i.e., week 02, week 08, week 13 and week 14. Each weekly data included two format: a network-format data (e.g., week02_network) and an adjacent-matrix data (e.g., week02_matrix). The network-format data includes attributes for the network, vertex and edge of the network. The adjacent-matrix data shows a square-format who-reply-to-whom matrix.
 
 ## Function 01: Plot network sociograph 
 
 This function plots sociograph for a network in fruchtermanreingold mode, with node size and color representing a participant's degree (indegree and outdegree) and edge width representing the frequency of interactions between two participants
 
 ```{r}
-sna_plot(par_week02_network,par_week02_matrix)
+sna_plot(week02_network,week02_matrix)
 ```
 
 ## Function 02: Node-level measures of participants in a network
@@ -33,7 +33,7 @@ sna_plot(par_week02_network,par_week02_matrix)
 This function returns a network's node-level measures, namely every participant's in/outdegree, betweenness, closeness.
 
 ```{r}
-node_measure(par_week02_network)
+node_measure(week02_network)
 ```
 
 ## Function 03: Network-level measures of a network
@@ -43,7 +43,7 @@ average degree, number of edges, reciprocity, transitivity, centralization, hier
 number of components, connectedness
 
 ```{r}
-node_measure(par_week02_network)
+node_measure(week02_network)
 ```
 
 ## Other info
