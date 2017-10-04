@@ -1,6 +1,6 @@
-Package: networkanalytics
+Package: networkanalyticspackage
 Type: Package
-Title: Network Analytics Package
+Title: Social Network Analytics Package
 Version: 0.1.0
 Author: Fan Ouyang
 Maintainer: Fan Ouyang <ouyan064@umn.edu>
