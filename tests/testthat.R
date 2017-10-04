@@ -1,4 +1,4 @@
 library(testthat)
-library(networkanalytics)
+library(networkanalyticspackage)
 
-test_check("networkanalytics")
+test_check("networkanalyticspackage")
