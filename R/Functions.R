@@ -56,7 +56,7 @@ node_measure<-function(x){
 #'
 #' @param x a network
 #' @example
-#' node_measure(week02_network)
+#' network_measure(week02_network)
 #'
 #' @export
 
