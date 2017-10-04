@@ -19,7 +19,7 @@ sna_plot<-function(x,y){
   sna::gplot(x,vertex.cex=d^0.5, gmode="graph",boxed.labels=FALSE,
         label.cex=0.7, label.pos=5, label.col="grey17",
         vertex.col=rgb((d)/max(d),0,(d)/max(d)),edge.col="grey17",
-        label=network.vertex.names(x),
+        label=network::network.vertex.names(x),
         edge.lwd=y*3,mode = "fruchtermanreingold")
 }
 
