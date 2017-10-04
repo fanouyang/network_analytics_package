@@ -1,6 +1,6 @@
 library(testthat)
 
-
+library(networkanalyticspackage)
 test_that("sna plot", {
    p1 <- sna_plot(week02_network, week02_matrix)
    expect_that(p1, is_a("matrix"))
