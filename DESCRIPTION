@@ -1,14 +1,20 @@
-Package: networkanalyticspackage
+Package: networkanalytics
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Network Analytics Package
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Fan Ouyang
+Maintainer: Fan Ouyang <ouyan064@umn.edu>
+Description: This is a simple package of three core functions of network analytics I used as a part of my dissertation,
+    example data also included.
+License: GPL-3
+URL: https://github.com/fanouyang/networkanalyticspackage
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
+Imports:
+    sna (>= 2.4),
+    network (>= 1.13.0)
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
