@@ -20,7 +20,7 @@ sna_plot<-function(x,y){
         label.cex=0.7, label.pos=5, label.col="grey17",
         vertex.col=rgb((d)/max(d),0,(d)/max(d)),edge.col="grey17",
         label=network::network.vertex.names(x),
-        edge.lwd=y*3,mode = "fruchtermanreingold")
+        edge.lwd=y*3)
 }
 
 #' Return node-level measures of a network.
