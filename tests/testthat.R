@@ -1,7 +1,5 @@
 library(testthat)
-library(networkanalyticspackage)
 
-test_check("networkanalyticspackage")
 
 test_that("sna plot", {
    p1 <- sna_plot(week02_network, week02_matrix)
