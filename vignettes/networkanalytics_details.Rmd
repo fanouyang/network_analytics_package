@@ -22,29 +22,20 @@ My dissertation focused on social learning analytics of a graduate-level 14-week
 
 ## Function 01: Plot network sociograph 
 
-This function plots sociograph for a network in fruchtermanreingold mode, with node size and color representing a participant's degree (indegree and outdegree) and edge width representing the frequency of interactions between two participants
+This function plots sociograph for a network in fruchtermanreingold mode, with node size and color representing a participant's degree (indegree and outdegree) and edge width representing the frequency of interactions between two participants. An example: sna_plot(week02_network,week02_matrix)
 
-```{r}
-sna_plot(week02_network,week02_matrix)
-```
 
 ## Function 02: Node-level measures of participants in a network
 
-This function returns a network's node-level measures, namely every participant's in/outdegree, betweenness, closeness.
+This function returns a network's node-level measures, namely every participant's in/outdegree, betweenness, closeness. An example: node_measure(week02_network)
 
-```{r}
-node_measure(week02_network)
-```
 
 ## Function 03: Network-level measures of a network
 
 This function returns results of a network's network-level measures, including network size, density,
 average degree, number of edges, reciprocity, transitivity, centralization, hierarchy,
-number of components, connectedness
+number of components, connectedness. An example: network_measure(week02_network)
 
-```{r}
-node_measure(week02_network)
-```
 
 ## Other info
 
