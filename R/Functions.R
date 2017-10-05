@@ -20,7 +20,7 @@ sna_plot<-function(x,y){
         label.cex=0.7, label.pos=5, label.col="grey17",
         vertex.col=rgb((d)/max(d),0,(d)/max(d)),edge.col="grey17",
         label=network::network.vertex.names(x),
-        edge.lwd=y*3)
+        edge.lwd=y*3,mode = "fruchtermanreingold")
 }
 
 #' Return node-level measures of a network.
@@ -36,7 +36,8 @@ sna_plot<-function(x,y){
 #'
 #' @export
 node_measure<-function(x){
-  central.nodes<-cbind(sna::degree(x,cmode="indegree"), sna::degree(x,cmode="outdegree"), sna::betweenness(x,rescale=T),
+  central.nodes<-cbind(sna::degree(x,cmode="indegree"), sna::degree(x,cmode="outdegree"),
+                       sna::betweenness(x,rescale=T),
                        sna::closeness(x,cmode="directed",rescale=T))
   colnames(central.nodes)<-c("indegree","outdegree","betweenness","closeness")
   rownames(central.nodes)<-x%v%"vertex.names"
@@ -59,7 +60,7 @@ node_measure<-function(x){
 #' @export
 
 network_measure<-function(x){
-  network.measure<-cbind(sna::network.size(x), sna::gden(x,mode="graph"), sna::mean(degree(x)),
+  network.measure<-cbind(sna::network.size(x), sna::gden(x,mode="graph"), mean(sna::degree(x)),
                          sna::network.edgecount(x,na.omit = F),
                          sna::grecip(x, measure = "dyadic.nonnull"), sna::gtrans(x),
                          sna::centralization(x,degree), sna::hierarchy(x, measure = "reciprocity"),

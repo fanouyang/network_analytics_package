@@ -5,3 +5,9 @@ export(node_measure)
 export(sna_plot)
 
 importFrom("grDevices", "rgb")
+
+importFrom("sna", "degree", "betweenness","closeness","network.size","gden",
+           "network.edgecount","grecip","gtrans","centralization","hierarchy",
+           "components","connectedness", "gplot.layout")
+
+importFrom("network", "%v%")
