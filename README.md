@@ -4,7 +4,7 @@
 
 - Vignette: To get started, read the introduction vignette
 
-- Travis [Badge]( https://travis-ci.org/fanouyang/networkanalyticspackage.svg?branch=master)
+- Travis ![Badge](https://travis-ci.org/fanouyang/networkanalyticspackage.svg?branch=master)
 
 ## Installation
 
