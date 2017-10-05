@@ -8,18 +8,18 @@
 #'
 #' @param x a network
 #' @param y a matrix
-#' @example
-#' sna_plot(week02_network,week02_matrix)
-#'
+#' @import sna
+#' @import network
+#' @import grDevices
 #' @export
 sna_plot<-function(x,y){
-  od<-sna::degree(x,gmode="digraph",cmode="outdegree")
-  id<-sna::degree(x,gmode="digraph",cmode="indegree")
+  od<-degree(x,gmode="digraph",cmode="outdegree")
+  id<-degree(x,gmode="digraph",cmode="indegree")
   d<-od+id
-  sna::gplot(x,vertex.cex=d^0.5, gmode="graph",boxed.labels=FALSE,
+  gplot(x,vertex.cex=d^0.5, gmode="graph",boxed.labels=FALSE,
         label.cex=0.7, label.pos=5, label.col="grey17",
         vertex.col=rgb((d)/max(d),0,(d)/max(d)),edge.col="grey17",
-        label=network::network.vertex.names(x),
+        label=network.vertex.names(x),
         edge.lwd=y*3,mode = "fruchtermanreingold")
 }
 
@@ -31,14 +31,13 @@ sna_plot<-function(x,y){
 #' closeness.
 #'
 #' @param x a network
-#' @example
-#' node_measure(week02_network)
-#'
+#' @import sna
+#' @import network
 #' @export
 node_measure<-function(x){
-  central.nodes<-cbind(sna::degree(x,cmode="indegree"), sna::degree(x,cmode="outdegree"),
-                       sna::betweenness(x,rescale=T),
-                       sna::closeness(x,cmode="directed",rescale=T))
+  central.nodes<-cbind(degree(x,cmode="indegree"), degree(x,cmode="outdegree"),
+                       betweenness(x,rescale=T),
+                       closeness(x,cmode="directed",rescale=T))
   colnames(central.nodes)<-c("indegree","outdegree","betweenness","closeness")
   rownames(central.nodes)<-x%v%"vertex.names"
 
@@ -54,17 +53,15 @@ node_measure<-function(x){
 #' number of components, connectedness
 #'
 #' @param x a network
-#' @example
-#' network_measure(week02_network)
-#'
+#' @import sna
+#' @import network
 #' @export
-
 network_measure<-function(x){
-  network.measure<-cbind(sna::network.size(x), sna::gden(x,mode="graph"), mean(sna::degree(x)),
-                         sna::network.edgecount(x,na.omit = F),
-                         sna::grecip(x, measure = "dyadic.nonnull"), sna::gtrans(x),
-                         sna::centralization(x,degree), sna::hierarchy(x, measure = "reciprocity"),
-                         sna::components(x,connected="weak"), sna::connectedness(x, g=NULL))
+  network.measure<-cbind(network.size(x), gden(x,mode="graph"), mean(degree(x)),
+                         network.edgecount(x,na.omit = F),
+                         grecip(x, measure = "dyadic.nonnull"), gtrans(x),
+                         centralization(x,degree), hierarchy(x, measure = "reciprocity"),
+                         components(x,connected="weak"), connectedness(x, g=NULL))
 
   colnames(network.measure)<-c("network size","density","average degree",
                                "number of edges","reciprocity","transitivity",
