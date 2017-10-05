@@ -17,4 +17,4 @@ devtools::install_github("fanouyang/networkanalyticspackage")
 
 ## More info
 
-More info please go to another github [repo] (https://github.com/fanouyang/sna_exampler), introducing basic concepts, examples, Shiny app, original research paper, and a short intro video.
+More info please go to another github [repo] (https://github.com/fanouyang/sna_exampler), where I introduced basic concepts, details of data formats, examples, Shiny app, original research paper, and a short intro video.
